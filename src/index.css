@@ -211,6 +211,7 @@ input {
     height: 100vh;
     transition: all 0.4s;
     left: -100%;
+    z-index: 100;
   }
 
   .nav-container {
@@ -313,7 +314,7 @@ input {
 .iaa-div span {
   width: 100%;
   color: var(--title);
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: var(--small-font-size);
 }
 
@@ -439,4 +440,14 @@ input {
   line-height: 2.5;
   margin-top: 2rem;
   max-width: 48rem;
+}
+
+@media screen and (max-width: 712px) {
+  .form-group {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .form-textarea-wrap {
+    grid-column: auto;
+  }
 }

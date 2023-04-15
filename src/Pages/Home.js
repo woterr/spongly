@@ -41,9 +41,10 @@ function Home() {
             </h1>
             <img src={fade} alt="" className="fade" />
             <div className="iaa-div">
-              <span>Web programming</span>
-              <span>Tech and Hardware</span>
+              <span>Technology</span>
+              <span>Hardware</span>
               <span>Gaming</span>
+              <span>Cars</span>
             </div>
           </div>
         </div>
