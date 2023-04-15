@@ -157,7 +157,7 @@ input {
   color: var(--title);
   font-size: 0.95rem;
   margin-bottom: 4px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 36px;
   text-transform: uppercase;
   letter-spacing: 0.215em;
@@ -247,51 +247,73 @@ input {
   gap: 4rem;
 }
 
-.flex2 {
+.title-name {
+  font-size: 2rem;
+  color: var(--title);
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.main-home {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
 }
 
-.flex2 p {
-  max-width: 50%;
+.socials {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin-top: 2rem;
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  background: var(--white);
-  border-radius: 3rem;
+.socials i {
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.socials i:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--title);
+}
+
+.main-home p {
+  max-width: 24rem;
+  line-height: 1.75rem;
+}
+
+.main-home p span {
+  font-weight: 600;
+}
+
+.time {
+  margin-top: 2rem;
+  display: flex;
+  font-size: small;
+  color: var(--text);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time i {
+  font-size: 1.25rem;
+  color: var(--title);
 }
 
 .line {
   background: var(--white);
   height: 2px;
-}
-
-.container.home .line:nth-of-type(1) {
-  width: 54%;
-}
-.container.home .line:nth-of-type(2) {
-  width: 25%;
-}
-
-.arrow {
-  display: flex;
-  align-items: center;
-  width: 30%;
-}
-
-.arrow > .line {
-  width: 100%;
-}
-.arrow-syb {
-  font-size: 2rem;
-  color: var(--white);
-  background: none;
-  padding: 0;
-  margin: 0;
-  margin-left: -1.1rem;
 }
 
 .iaa {
@@ -330,24 +352,18 @@ input {
 }
 
 @media screen and (max-width: 708px) {
-  .home.container .line,
-  .arrow,
-  .home.container .dot {
-    display: none;
+  .container.home {
+    padding: 1rem;
+    background: none;
   }
 
-  .home.container .flex2:nth-of-type(1) {
-    justify-content: left;
-  }
-  .home.container .flex2:nth-of-type(2) {
-    justify-content: right;
-  }
-  .home.container .flex2:nth-of-type(2) p {
-    text-align: right;
+  .main-home {
+    flex-direction: column;
   }
 
-  .home.container .flex2:nth-of-type(3) {
-    justify-content: left;
+  .main-home .socials {
+    flex-direction: row;
+    /* gap: 3rem; */
   }
 
   .iaa {

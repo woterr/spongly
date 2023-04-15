@@ -1,9 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // importing aos
 import AOS from "aos";
 import "aos/dist/aos.css";
 import fade from "../Images/fading-lines.png";
+
 function Home() {
+  const time = new Date().toLocaleTimeString("en-US", {
+    timeZone: "Asia/Katmandu",
+  });
+
+  const date = new Date().toLocaleDateString("en-US", {
+    timeZone: "Asia/Katmandu",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  const [currentTime, setCurrentTime] = useState(time);
+
+  const updateTime = () => {
+    let time = new Date().toLocaleTimeString("en-US", {
+      timeZone: "Asia/Katmandu",
+    });
+    setCurrentTime(time);
+  };
+  setInterval(updateTime, 1000);
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -11,29 +33,40 @@ function Home() {
     <>
       <section>
         <div className="container home">
-          <div className="flex2" data-aos="fade-right" data-aos-duration="800">
-            <p>I'm a 15-year-old Nepalese IT enthusiast.</p>
-            <span className="line"></span>
-          </div>
-          <div className="flex2" data-aos="fade-up" data-aos-duration="800">
-            <span className="dot"></span>
-            <p>
-              {" "}
-              I've always been interested in technology, and I'm constantly keen
-              to learn new things and develop myself.{" "}
-            </p>
-            <span className="line"></span>
-          </div>
-          <div className="flex2" data-aos="fade-left" data-aos-duration="800">
-            <div className="arrow">
-              <span className="line"></span>
-              <i className="bx bx-chevron-right arrow-syb"></i>
+          <div
+            className="main-home"
+            data-aos="fade-right"
+            data-aos-duration="800"
+          >
+            <div>
+              <h1 className="title-name">Spongly</h1>
+              <p>
+                15-year-old <span>IT enthusiast</span> and Technological
+                aspirant from Nepal
+              </p>
+              <div className="time">
+                <i className="bx bx-time-five"></i>
+                <span>
+                  {date} • {currentTime}
+                </span>
+              </div>
             </div>
-            <p>
-              I adore web programming, gaming, and playing with electronics, and
-              I'm always looking for new ways to improve my abilities and
-              knowledge in these areas.
-            </p>
+            <div
+              class="socials aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="600"
+            >
+              <a href="https://github.com/Spongly">
+                <i className="bx bxl-github"></i>
+              </a>
+              <a href="https://discordapp.com/users/600242679380574228">
+                <i className="bx bxl-discord-alt"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UClnAAH0LnfrX6qXzhqN4p7w">
+                <i className="bx bxl-youtube"></i>
+              </a>
+            </div>
           </div>
           <div className="iaa" data-aos="fade-up" data-aos-duration="800">
             <h1 className="title">
